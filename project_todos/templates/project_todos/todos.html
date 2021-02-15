@@ -1,0 +1,9 @@
+{% for todos in todos_list %}
+    {{todos.title }} <a href={% url 'todos:todo_detail' todos.title todos.id %}>detail</a>
+      <a href={% url 'todos:delete_todo' todos.id %}>delete</a>
+     <a href={% url 'todos:update_todo' todos.id %}>update</a> <br>
+{% endfor %} <br>
+
+{% for user in users  %}
+    email : {{ user.email }} and username : {{ user.username }} <br>
+{% endfor %}

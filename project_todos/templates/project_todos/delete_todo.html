@@ -1,0 +1,5 @@
+<form method='post'>
+    {% csrf_token %}
+    are you sure want delete ' {{ todo.title }} '
+    <button type='submit'>delete</button>
+</form>

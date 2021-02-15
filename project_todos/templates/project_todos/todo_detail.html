@@ -1,0 +1,16 @@
+{{ object.title }} <br>
+{{ object.user.username }} <br>
+{{ object.time_to_do }}
+
+<h1>comments</h1> <br>
+
+{% for cmt in comments  %}
+   title : {{ cmt.title }} , body : {{ cmt.body }}
+{% endfor %} 
+
+
+<form method='post' >
+{% csrf_token %}
+{{ form.as_p }}
+<button type='submit'>submit</button>
+</form>
