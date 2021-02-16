@@ -10,7 +10,7 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from .models import Todo
 from .forms import CreateCommentForm
-
+from .mixins import FieldsDetectorMixin
 
 class HomePage(TemplateView):
     template_name = "project_todos/home_page.html"
@@ -70,7 +70,7 @@ class TodoDetailView(LoginRequiredMixin,FormMixin ,DetailView):
 #         return super().form_valid(form)
 
 
-class CreateTodoView(CreateView):
+class CreateTodoView(LoginRequiredMixin,FieldsDetectorMixin,CreateView):
     model = Todo
     template_name = "project_todos/create_todo.html"
     fields = ("title","time_to_do")

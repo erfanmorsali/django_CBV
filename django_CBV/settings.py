@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # my_apps
+    'project_apis',
     'project_todos',
     # default
     'django.contrib.admin',
@@ -29,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
